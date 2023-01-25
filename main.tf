@@ -6,6 +6,6 @@ resource "aws_instance" "Meena" {
   instance_type = "t2.micro"
   key_name = "siri"
   tags = {
-    Name = "Demo"
+    Name = "Demo1"
   }
 }
