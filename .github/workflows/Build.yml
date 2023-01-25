@@ -35,3 +35,6 @@ jobs:
           terraform validate
           terraform plan 
           terraform apply -auto-approve
+        run: |
+        docker build -t $EC2_INSTANCE/$EC2_INSTANCE:$IMAGE_TAG .
+        docker push $EC2_INSTANCE/$EC2_INSTANCE:$IMAGE_TAG  
