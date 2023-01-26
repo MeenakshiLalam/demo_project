@@ -25,5 +25,5 @@ jobs:
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         aws ecr describe-repositories
-        aws ecr describe-images --repository-name amazonlinux
-        docker pull meenalalam11@gmail.com.dkr.ecr.us-west-2.amazonaws.com/amazonlinux:latest
+        aws ecr describe-images --repository-name github-demo
+        docker pull meenalalam11@gmail.com.dkr.ecr.us-east-1.amazonaws.com/github-demo:latest 
