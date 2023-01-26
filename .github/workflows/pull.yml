@@ -1,4 +1,4 @@
-name: Pull the image from Ecr to Ec2
+name:create the image from Ecr to Ec2
 on: pull
 jobs:
   build:
