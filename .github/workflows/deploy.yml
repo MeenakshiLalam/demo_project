@@ -29,7 +29,8 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: githubactions
           IMAGE_TAG: sample_image
-        run: |
+        run: | 
+          aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 411460689947.dkr.ecr.us-east-1.amazonaws.com
           docker build -t github-demo
           docker tag github-demo:latest 411460689947.dkr.ecr.us-east-1.amazonaws.com/github-demo:latest
           docker push 411460689947.dkr.ecr.us-east-1.amazonaws.com/github-demo:latest
