@@ -30,10 +30,8 @@ jobs:
           ECR_REPOSITORY: githubactions
           IMAGE_TAG: sample_image
         run: | 
-          aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 411460689947.dkr.ecr.us-east-1.amazonaws.com
-          docker build -t github-demo
-          docker tag github-demo:latest 411460689947.dkr.ecr.us-east-1.amazonaws.com/github-demo:latest
-          docker push 411460689947.dkr.ecr.us-east-1.amazonaws.com/github-demo:latest
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
       - name: install-aws-cli
         uses: unfor19/install-aws-cli-action@master
       - run: aws --version
