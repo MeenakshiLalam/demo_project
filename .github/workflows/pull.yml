@@ -1,8 +1,13 @@
 name:create the image from Ecr to Ec2
-on: pull
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ] 
+  
 jobs:
   build:
-    name: pull Image
+    name: Build Image
     runs-on: ubuntu-latest
     steps:
     - name: Check out code
