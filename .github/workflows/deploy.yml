@@ -9,8 +9,8 @@ env:
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
   AWS_DEFAULT_REGION: us-east-1
   ECR_REPOSITORY: demo-project
-  PRIVATE_SSH_KEY: ${{ secrets.AWS_SSH_KEY_PRIVATE }}
-  PUBLIC_SSH_KEY: ${{ secrets.AWS_SSH_KEY_PUBLIC }}
+  PRIVATE_SSH_KEY: ${{ secrets.PRIVATE_SSH_KEY }}
+  PUBLIC_SSH_KEY: ${{ secrets.PUBLIC_SSH_KEY}}
   IMAGE_TAG: sample_image
 
 jobs:
