@@ -37,7 +37,7 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
          host: ${{ env.AWS_PUBLIC_SSH_KEY }}
-         username: Demo
+         username: ec2-user
          key: ${{ env.AWS_PRIVATE_SSH_KEY }}
          run:
            sudo docker pull $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG   
